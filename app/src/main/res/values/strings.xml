@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QR-Scanner</string>
+    <string name="tile_label">Escanear QR</string>
+    <string name="tile_content_description">Abrir escáner de códigos QR</string>
+    <string name="add_tile_prompt_title">Acceso rápido</string>
+    <string name="add_tile_prompt_message">¿Agregar Escanear QR a los Ajustes rápidos para abrirlo desde cualquier pantalla con un toque?</string>
+    <string name="add_tile_prompt_confirm">Agregar</string>
+    <string name="add_tile_prompt_dismiss">Ahora no</string>
+</resources>
