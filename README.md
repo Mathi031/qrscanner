@@ -38,6 +38,32 @@ cd qrscanner
 
 The debug APK is produced at `app/build/outputs/apk/debug/app-debug.apk`.
 
+## Release build (Play Store)
+
+The release build is minified (R8 + resource shrinking) and signed with an upload
+keystore that is never committed.
+
+1. Create `keystore.properties` in the repository root (it is in `.gitignore`):
+
+   ```properties
+   storeFile=/Users/mathi03/keystores/qrscanner-upload.jks
+   storePassword=********
+   keyAlias=upload
+   keyPassword=********
+   ```
+
+   If this file is missing (CI, or a fresh clone) the debug build still works; only
+   the signed release build requires it.
+
+2. Generate the signed App Bundle:
+
+   ```bash
+   ./gradlew bundleRelease
+   ```
+
+   The bundle is produced at `app/build/outputs/bundle/release/app-release.aab` —
+   that is the file you upload to Play Console.
+
 ## Permissions
 
 - **CAMERA**: the only runtime permission. The app requests it the first time you open the live scanner; if you deny it, you can still scan from the gallery.
